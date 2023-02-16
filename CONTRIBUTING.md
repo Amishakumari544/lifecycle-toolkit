@@ -19,7 +19,7 @@ This document lays out how to get you started in contributing to Keptn Lifecycle
 If you are worried or don’t know where to start, check out our next section explaining what kind of help we could use and where can you get involved. You can reach out with questions to [keptn](https://slack.keptn.sh) on Slack.
 You can also submit an issue, and a maintainer can guide you!
 
-## Prerequisites
+### Prerequisites
 
 - [**Docker**](https://docs.docker.com/get-docker/) to build a new version of the containers.
 - A Kubernetes `cluster >= Kubernetes 1.24` .If you don’t have one, we recommend Kubernetes-in-Docker(kind) to set up your local development environment.
@@ -27,7 +27,7 @@ You can also submit an issue, and a maintainer can guide you!
 - [**kustomize**](https://kustomize.io/) for customizing Kubernetes resource configurations and generating manifests.
 - [**Helm**](https://helm.sh/) for simplifying the deployment and management of applications and services on Kubernetes by providing a packaging system that manages the complexities of Kubernetes resources.
 
-## Linters requirements
+### Linters requirements
 
 This project uses a set of linters to ensure good code quality.
 In order to make proper use of those linters inside an IDE, the following configuration is required.
@@ -77,7 +77,45 @@ If you are on Windows you need to install **make** for the above process to comp
 ( **NOTE**: when using the make command on Windows, you may receive an `unrecognized command` error for a command that is installed.
 This usually indicates that `PATH` for the binary is not set correctly).
 
-### Auto signoff commit messages
+## Submit a Pull Request 🚀
+
+At this point, you should switch back to the `master` branch in your repository, and make sure it is up to date with `master` branch of Keptn:
+
+```bash
+git remote add upstream https://github.com/keptn/lifecycle-toolkit.git
+git checkout master
+git pull upstream master
+```
+
+Then update your feature branch from your local copy of `master` and push it:
+
+```bash
+git checkout feature/123/foo
+git rebase master
+git push --set-upstream origin feature/123/foo
+```
+
+**All PRs must include a commit message with the description of the changes made!**
+
+
+### Commit Types
+
+`Type` can be:
+
+- `feat    `: A new feature
+- `fix     `: A bug fix
+- `build   `: Changes that affect the build system or external dependencies
+- `chore   `: Other changes that don't modify source or test files
+- `ci      `: Changes to our CI configuration files and scripts
+- `docs    `: Documentation only changes
+- `perf    `: A code change that improves performance
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `revert  `: Reverts a previous commit
+- `style   `: Changes that do not affect the meaning of the code
+- `test    `: Adding missing tests or correcting existing tests
+
+
+## Auto signoff commit messages
 
 We have a DCO check which runs on every PR to verify that the commit has been signed off.
 
