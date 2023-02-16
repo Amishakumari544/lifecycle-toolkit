@@ -5,9 +5,29 @@ The Keptn Lifecycle Toolkit is a community-driven project and we greatly value c
 There are various ways to contribute to the Lifecycle Toolkit, and all contributions are highly valued.
 Please, explore the options below to learn more about how you can contribute.
 
+
+* **Create an issue**: If you have noticed a bug, want to contribute features, or simply ask a question that for whatever reason you do not want to ask in the [Keptn Slack workspace](https://slack.keptn.sh), please [search the issue tracker](https://github.com/keptn/lifecycle-toolkit/issues?q=something) to see if someone else in the community has already created a ticket. If not, go ahead and [create an issue](https://github.com/keptn/lifecycle-toolkit/issues/new).
+
+* **Start contributing**: We also have a list of [good first issues](https://github.com/keptn/lifecycle-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). If you want to work on it, just post a comment on the issue.
+
+* **Add yourself**: Add yourself to the [list of contributors](CONTRIBUTORS.md) along with your first pull request.
+
+This document lays out how to get you started in contributing to Keptn Lifecycle Toolkit, so please read on.
+
+## How to Start?
+
+If you are worried or don’t know where to start, check out our next section explaining what kind of help we could use and where can you get involved. You can reach out with questions to [keptn](https://slack.keptn.sh) on Slack.
+You can also submit an issue, and a maintainer can guide you!
+
 ## Prerequisites
 
-## Linters
+- [**Docker**](https://docs.docker.com/get-docker/) to build a new version of the containers.
+- A Kubernetes `cluster >= Kubernetes 1.24` .If you don’t have one, we recommend Kubernetes-in-Docker(kind) to set up your local development environment.
+- [**kubectl**](https://kubernetes.io/docs/tasks/tools/) installed on your system.
+- [**kustomize**](https://kustomize.io/) for customizing Kubernetes resource configurations and generating manifests.
+- [**Helm**](https://helm.sh/) for simplifying the deployment and management of applications and services on Kubernetes by providing a packaging system that manages the complexities of Kubernetes resources.
+
+## Linters requirements
 
 This project uses a set of linters to ensure good code quality.
 In order to make proper use of those linters inside an IDE, the following configuration is required.
@@ -20,7 +40,7 @@ the [`golangci-lint` documentation](https://golangci-lint.run/usage/integrations
 In Visual Studio Code the [Golang](https://marketplace.visualstudio.com/items?itemName=aldijav.golangwithdidi)
 extension is required.
 
-Adding the following lines to the `Golang` extension configuration file will enable all linters used in this project.
+Adding the following lines to the `Golang` extension configuration file enables all linters used in this project.
 
 ```json
 "go.lintTool": {
@@ -43,11 +63,50 @@ Adding the following lines to the `Golang` extension configuration file will ena
 },
 ```
 
-### GoLand / IntelliJ
+### GoLand / IntelliJ requirements
 
-In GoLand or IntelliJ, the plugin [Go Linter](https://plugins.jetbrains.com/plugin/12496-go-linter) will be required.
+- Install either the **GoLand** or **IntelliJ**  Integrated Development Environment (IDE) for the Go programming language, plus the [Go Linter](https://plugins.jetbrains.com/plugin/12496-go-linter) plugin.
 
-The plugin can be installed via `Settings` >> `Plugins` >> `Marketplace`, search for `Go Linter` and install it.
+- The plugin can be installed via `Settings` >> `Plugins` >> `Marketplace`, search for `Go Linter` and install it.
 Once installed, make sure that the plugin is using the `.golangci.yml` file from the root directory.
 
-The configuration of `Go Linter` can be found in the `Tools` section of the settings.
+- The configuration of `Go Linter` can be found in the `Tools` section of the settings.
+
+If you are on Windows you need to install **make** for the above process to complete.
+
+( **NOTE**: when using the make command on Windows, you may receive an `unrecognized command` error for a command that is installed.
+This usually indicates that `PATH` for the binary is not set correctly).
+
+### Auto signoff commit messages
+
+We have a DCO check which runs on every PR to verify that the commit has been signed off.
+
+To sign off the last commit you made, you can use
+```bash
+git commit --amend --signoff
+```
+
+or the command below to sign off the last 2 commits you made
+```bash
+git rebase HEAD~2 --signoff
+```
+
+This process is sometimes inconvenient but you can automate it
+by creating a pre-commit git hook as follows:
+1. Create the hook:
+``` bash
+touch .git/hooks/prepare-commit-msg
+```
+
+1. Add the following to the `prepare-commit-msg` file:
+```bash
+SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
+```
+
+1. Give it execution permissions by calling:
+```bash
+chmod +x ./.git/hooks/prepare-commit-msg
+```
+
+
