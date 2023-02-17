@@ -72,30 +72,30 @@ Once installed, make sure that the plugin is using the `.golangci.yml` file from
 
 - The configuration of `Go Linter` can be found in the `Tools` section of the settings.
 
-If you are on Windows you need to install **make** for the above process to complete.
+If you are on Windows, you need to install **make** for the above process to complete.
 
-( **NOTE**: when using the make command on Windows, you may receive an `unrecognized command` error for a command that is installed.
+( **NOTE**: When using the make command on Windows, you may receive an `unrecognized command` error for a command that is installed.
 This usually indicates that `PATH` for the binary is not set correctly).
 
 ## Submit a Pull Request 🚀
 
-At this point, you should switch back to the `master` branch in your repository, and make sure it is up to date with `master` branch of Keptn:
+At this point, you should switch back to the `main` branch in your repository, and make sure it is up to date with `main` branch of Keptn:
 
 ```bash
 git remote add upstream https://github.com/keptn/lifecycle-toolkit.git
-git checkout master
-git pull upstream master
+git checkout main
+git pull upstream main
 ```
 
-Then update your feature branch from your local copy of `master` and push it:
+Then update your feature branch from your local copy of `main` and push it:
 
 ```bash
 git checkout feature/123/foo
-git rebase master
+git rebase main
 git push --set-upstream origin feature/123/foo
 ```
 
-**All PRs must include a commit message with the description of the changes made!**
+**All PRs must include a commit message with a description of the changes made!**
 
 
 ### Commit Types
@@ -117,7 +117,7 @@ git push --set-upstream origin feature/123/foo
 
 ## Auto signoff commit messages
 
-We have a DCO check which runs on every PR to verify that the commit has been signed off.
+We have a DCO check that runs on every PR to verify that the commit has been signed off.
 
 To sign off the last commit you made, you can use
 ```bash
