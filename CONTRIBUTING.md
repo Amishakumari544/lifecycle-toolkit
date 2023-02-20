@@ -23,7 +23,8 @@ This document lays out how to get you started in contributing to Keptn Lifecycle
 
 ## How to Start?
 
-If you are worried or don’t know where to start, check out our next section explaining what kind of help we could use and where can you get involved. You can reach out with questions to [keptn](https://slack.keptn.sh) on Slack.
+If you are worried or don’t know where to start, check out our next section explaining what kind of help we could use and where you can get involved.
+You can reach out with questions to [keptn](https://slack.keptn.sh) on Slack.
 You can also submit an issue, and a maintainer can guide you!
 
 ### Prerequisites
