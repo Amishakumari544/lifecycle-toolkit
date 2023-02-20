@@ -13,7 +13,7 @@ Please, explore the options below to learn more about how you can contribute.
 Please make sure to read and observe our [Code of Conduct](https://github.com/keptn/.github/blob/main/CODE_OF_CONDUCT.md).
 
 
-* **Create an issue**: If you have noticed a bug, want to contribute features, or simply ask a question that for whatever reason you do not want to ask in the [Keptn Slack workspace](https://slack.keptn.sh), please [search the issue tracker](https://github.com/keptn/lifecycle-toolkit/issues?q=something) to see if someone else in the community has already created a ticket. If not, go ahead and [create an issue](https://github.com/keptn/lifecycle-toolkit/issues/new).
+* **Create an issue**: If you have noticed a bug, want to contribute features, or simply ask a question that for whatever reason you do not want to ask in the [Lifecycle Toolkit Channels in the CNCF Slack workspace](https://cloud-native.slack.com/channels/keptn-lifecycle-toolkit-dev), please [search the issue tracker](https://github.com/keptn/lifecycle-toolkit/issues?q=something) to see if someone else in the community has already created a ticket. If not, go ahead and [create an issue](https://github.com/keptn/lifecycle-toolkit/issues/new).
 
 * **Start contributing**: We also have a list of [good first issues](https://github.com/keptn/lifecycle-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). If you want to work on it, just post a comment on the issue.
 
