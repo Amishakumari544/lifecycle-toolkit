@@ -144,7 +144,7 @@ In addition, please always ask yourself the following questions:
 Your PR will usually be reviewed by the Keptn Lifecycle Toolkit team within a couple of days, but feel free to let us know about your PR [via Slack](https://cloud-native.slack.com/channels/keptn-lifecycle-toolkit-dev).
 ### Commit Types
 
-`Type` can be:
+**Type** can be:
 
 - `feat    `: A new feature
 - `fix     `: A bug fix
