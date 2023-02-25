@@ -24,8 +24,7 @@ This document lays out how to get you started in contributing to Keptn Lifecycle
 ## How to Start?
 
 If you are worried or don’t know where to start, check out our next section explaining what kind of help we could use and where you can get involved.
-You can reach out with questions to [keptn](https://slack.keptn.sh) on Slack.
-You can also submit an issue, and a maintainer can guide you!
+You can reach out with the questions to [Lifecycle Toolkit Channels](https://cloud-native.slack.com/channels/keptn-lifecycle-toolkit-dev) on Slack and a mentor will surely guide you!
 
 ### Prerequisites
 
@@ -87,7 +86,7 @@ This usually indicates that `PATH` for the binary is not set correctly).
 
 ## Submit a Pull Request 🚀
 
-At this point, you should switch back to the `main` branch in your repository, and make sure it is up to date with `main` branch of Keptn:
+At this point, you should switch back to the `main` branch in your repository, and make sure it is up to date with `main` branch of Keptn Lifecycle Toolkit:
 
 ```bash
 git remote add upstream https://github.com/keptn/lifecycle-toolkit.git
@@ -105,7 +104,44 @@ git push --set-upstream origin feature/123/foo
 
 **All PRs must include a commit message with a description of the changes made!**
 
+Make sure you sign off your commits. To do this automatically check [this](https://github.com/keptn/lifecycle-toolkit/blob/main/CONTRIBUTING.md#auto-signoff-commit-messages).
+Finally, go to GitHub and create a Pull Request. There should be a PR template already prepared for you.
+If not, you will find it at `.github/pull_request_template.md`.
+Please describe what this PR is about and add a link to relevant GitHub issues.
+If you changed something that is visible to the user, please add a screenshot.
+Please follow the [conventional commit guidelines](https://www.conventionalcommits.org/en/v1.0.0/) for your PR title.
 
+If you only have one commit in your PR, please follow the guidelines for the message of that single commit, otherwise the PR title is enough.
+You can find a list of all possible feature types [here](#commit-types-and-scopes).
+
+An example for a pull request title would be:
+```
+feat(api): New endpoint for feature X (#1234)
+```
+
+If you have **breaking changes** in your PR, it is important to note them in the PR description but also in the merge commit for that PR.
+When pressing "squash and merge", you have the option to fill out the commit message. Please use that feature to add the breaking changes according to the [conventional commit guidelines](https://www.conventionalcommits.org/en/v1.0.0/).
+Also, please remove the PR number at the end and just add the issue number.
+
+An example for a PR with breaking changes and the according merge commit:
+```
+feat(bridge): New button that breaks other things (#345)
+
+BREAKING CHANGE: The new button added with #345 introduces new functionality that is not compatible with the previous type of sent events.
+```
+
+If your breaking change can be explained in a single line you can also use this form:
+```
+feat(bridge)!: New button that breaks other things (#345)
+```
+
+Following those guidelines helps us create automated releases where the commit and PR messages are directly used in the changelog.
+
+In addition, please always ask yourself the following questions:
+
+**Based on the linked issue, what changes within the PR would you expect as a reviewer?**
+
+Your PR will usually be reviewed by the Keptn Lifecycle Toolkit team within a couple of days, but feel free to let us know about your PR [via Slack](https://cloud-native.slack.com/channels/keptn-lifecycle-toolkit-dev).
 ### Commit Types
 
 `Type` can be:
@@ -126,6 +162,11 @@ git push --set-upstream origin feature/123/foo
 ## Auto signoff commit messages
 
 We have a DCO check that runs on every PR to verify that the commit has been signed off.
+
+To sign off the commits use `-s` flag, you can can use
+```bash
+git commit -s -m "my awesome contribution"
+```
 
 To sign off the last commit you made, you can use
 ```bash
